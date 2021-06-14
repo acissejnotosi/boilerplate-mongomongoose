@@ -92,9 +92,9 @@ const removeById = (personId, done) => {
 
 const removeManyPeople = (done) => {
   const nameToRemove = "Mary";
-  Person.findOneAndRemove({ name: nameToRemove }, {}, (err, deletedPerson) => {
+  Person.remove({ name: nameToRemove }, (err, response) => {
     if (err) return console.log(err);
-    done(null, deletedPerson);
+    done(null, response);
   });
 };
 
